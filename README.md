@@ -90,27 +90,46 @@ El proceso depende de si ya existen notas o no.
 
 Se crea en la **raíz de la bóveda**, con ese nombre exacto: OpenCode lo busca por nombre al arrancar y lo carga antes del primer mensaje. Es una convención que varias herramientas respetan.
 
-Contenido mínimo recomendado:
+Un ejemplo de la estructura que se puede usar como punto de partida:
 
 ```markdown
 # Contexto
-Qué es esta bóveda y para qué se usa.
+
+Esta es mi bóveda de Obsidian: notas personales en archivos Markdown.
+La uso como segundo cerebro.
+Al iniciar, lee Memoria.md además de este archivo.
 
 # Estructura
-Qué hay en cada carpeta, una frase por carpeta.
+
+- Notas/     — apuntes y notas permanentes.
+- Proyectos/ — un archivo por proyecto activo.
+- Diario/    — una nota por mes, formato AAAA_MM.
+- Archivo/   — material inactivo o terminado.
+- Recursos/  — imágenes y adjuntos.
+- Memoria.md — memoria del agente entre sesiones.
 
 # Permisos por carpeta
-Quién puede escribir dónde. Explícito, carpeta por carpeta.
+
+- Archivo/    — solo lectura. NUNCA modificar.
+- Notas/      — lectura y editable.
+- Recursos/   — solo lectura.
+- Proyectos/  — lectura y editable solo si te lo pido explícitamente.
+- Diario/     — lectura y editable solo si te lo pido explícitamente.
+- Memoria.md  — editable.
+
+# Reglas
+
+- NO renombres ni muevas archivos: se rompen los enlaces.
+- Puedes editar el contenido de las notas, nunca sus nombres ni rutas.
+- Las fechas van en formato AAAA-MM o AAAA-MM-DD.
+- Los enlaces se escriben con dobles corchetes y ruta completa desde la raíz.
 
 # Cómo trabajar
-Que el agente muestre el plan antes de cambiar algo.
-Que reporte qué cambió al terminar.
-Que pregunte si algo es ambiguo.
+
+- Antes de cualquier cambio, muéstrame qué vas a hacer y espera mi aprobación.
+- Si algo es ambiguo, pregunta en vez de asumir.
+- Cuando acabes, repasa los cambios y repórtalos.
 ```
-
-Ejemplo real de `AGENTS.md` en uso:
-
-![Ejemplo de AGENTS.md](images/06-agents-md.png)
 
 Puntos a cuidar:
 
