@@ -101,21 +101,23 @@ Al iniciar, lee Memoria.md además de este archivo.
 
 # Estructura
 
-- Notas/     — apuntes y notas permanentes.
-- Proyectos/ — un archivo por proyecto activo.
-- Diario/    — una nota por mes, formato AAAA_MM.
-- Archivo/   — material inactivo o terminado.
-- Recursos/  — imágenes y adjuntos.
-- Memoria.md — memoria del agente entre sesiones.
+- Notas/        — apuntes y notas permanentes.
+- Proyectos/    — un archivo por proyecto activo.
+- Diario/       — una nota por mes, formato AAAA_MM.
+- Archivo/      — material inactivo o terminado.
+- Recursos/     — imágenes y adjuntos.
+- Pendientes.md — lista de cosas por hacer.
+- Memoria.md    — memoria del agente entre sesiones.
 
 # Permisos por carpeta
 
-- Archivo/    — solo lectura. NUNCA modificar.
-- Notas/      — lectura y editable.
-- Recursos/   — solo lectura.
-- Proyectos/  — lectura y editable solo si te lo pido explícitamente.
-- Diario/     — lectura y editable solo si te lo pido explícitamente.
-- Memoria.md  — editable.
+- Archivo/      — solo lectura. NUNCA modificar.
+- Notas/        — lectura y editable.
+- Recursos/     — solo lectura.
+- Proyectos/    — lectura y editable solo si te lo pido explícitamente.
+- Diario/       — lectura y editable solo si te lo pido explícitamente.
+- Pendientes.md — puedes modificarlo y agregar cosas, editable si te lo pido.
+- Memoria.md    — editable.
 
 # Reglas
 
@@ -250,6 +252,39 @@ Cada punto siguiente costó tiempo real.
 - **Style Settings:** si se usan temas. Muchos temas modernos son sobrios de fábrica y su personalización vive en el panel que agrega este plugin; sin él se queda el aspecto por defecto.
 - **Transcripción de voz:** si se quiere, elegir una que transcriba **en la computadora**, no una que mande el audio a una API. Existen las dos; la local no cuesta ni sale de la máquina.
 - **Tasks:** para poner casillas como lista de pendientes.
+
+---
+
+## Plantillas
+
+La carpeta `plantillas/` contiene un punto de partida funcional:
+
+```
+plantillas/
+├── AGENTS.md
+├── Memoria.md
+└── .opencode/
+    ├── .gitignore
+    ├── agents/
+    │   └── profesor.md
+    └── commands/
+        ├── cerrar.md
+        ├── cerrar-clase.md
+        ├── hoy.md
+        ├── resumen-mes.md
+        ├── profesor-robotica.md
+        ├── profesor-electronica.md
+        └── profesor-microeconomia.md
+```
+
+Cómo usarlas:
+
+1. Copia `AGENTS.md` y `Memoria.md` a la raíz de tu bóveda.
+2. Copia la carpeta `.opencode/` también a la raíz (incluido su `.gitignore`, que evita que `node_modules` acabe en tu repositorio).
+3. Ajusta la estructura y los permisos de `AGENTS.md` a tus carpetas reales.
+4. Abre OpenCode dentro de la bóveda y prueba un comando de solo lectura (`/resumen-mes`). La descripción debe aparecer en gris junto al comando al escribir `/`.
+
+Los comandos `profesor-*` son ejemplos de cómo queda un comando lleno para una materia; se conectan con el agente `profesor.md` y con la estructura `Clases/<Materia>/`. Si tu materia no usa el mismo material, sirven igual como plantilla: cambia rutas y nombres.
 
 ---
 
